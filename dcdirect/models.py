@@ -10,7 +10,6 @@ class Business(db.Model):
     event_venue = db.Column(db.Boolean, default=False, nullable=False)
     business_description = db.Column(db.Text, unique=False, nullable=True)
     category_id = db.Column(db.Integer, db.ForeignKey("category.id"), nullable=False)
-    subcategory_id = db.Column(db.Integer, db.ForeignKey("subcategory.id"), nullable=False)
     event_id = db.relationship("Event", backref="business", cascade="all, delete", lazy=True)
     def __repr__(self):
         return self.business_name
@@ -20,22 +19,10 @@ class Category(db.Model):
     # schema for business category model
     id = db.Column(db.Integer, primary_key=True)
     category_name = db.Column(db.String(20), unique=True, nullable=False)
-    subcategory_id = db.relationship("Subcategory", backref="category", lazy=True)
     business_name = db.relationship("Business", backref="category", lazy=True)
 
     def __repr__(self):
         return self.category_name
-
-
-class Subcategory(db.Model):
-    # schema for business subcategory model
-    id = db.Column(db.Integer, primary_key=True)
-    subcategory_name = db.Column(db.String(20), unique=True, nullable=False)
-    business_name = db.relationship("Business", backref="subcategory", lazy=True)
-
-
-    def __repr__(self):
-        return self.subcategory_name
 
 
 class Event(db.Model):
