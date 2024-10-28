@@ -5,5 +5,5 @@ from dcdirect.models import Business, Category, Event
 
 @app.route("/")
 def home():
-    return render_template("base.html")
+    return render_template("events.html")
     
