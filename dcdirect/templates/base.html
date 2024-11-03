@@ -13,22 +13,25 @@
         <!-- Main Navbar -->
         <nav class ="purple darken-2">
             <div class="nav-wrapper">
-            <a href="{{ url_for('home') }}" class="brand-logo">Diesel City Directory</a>
+            <a href="{{ url_for('home') }}" class="brand-logo">Diesel City</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
-                <li><a href="{{ url_for('home') }}">Home</a></li>
-                <li><a href="">Events</a></li>
-                <li><a href="">Venues</a></li>
+                <li><a href="{{ url_for('home') }}">Whats On</a></li>
+                <li><a href="{{ url_for('places') }}">Where to stay</a></li>
+                <li><a href="{{ url_for('fooddrink') }}">Food & Drink</a></li>
+                <li><a href="{{ url_for('login') }}">Log In</a></li>
+                <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
                 
             </ul>
             </div>
         </nav>
     <!-- Mobile Collapsed Navbar -->
         <ul class="sidenav" id="mobile-demo">
-            <li><a href="{{ url_for('home') }}">Home</a></li>
-            <li><a href="">Events</a></li>
-            <li><a href="">Venues</a></li>
-            
+            <li><a href="{{ url_for('home') }}">Whats On</a></li>
+            <li><a href="{{ url_for('places') }}">Where to stay</a></li>
+            <li><a href="{{ url_for('fooddrink') }}">Food & Drink</a></li>
+            <li><a href="{{ url_for('login') }}">Log In</a></li>
+            <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
         </ul>
     </header>
 
