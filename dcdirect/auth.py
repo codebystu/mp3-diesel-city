@@ -10,4 +10,6 @@ def login():
 
 @auth.route("/signup", methods=['GET', 'POST'])
 def signup():
+    data = request.form
+    print(data)
     return render_template("signup.html")   
