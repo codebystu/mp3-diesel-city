@@ -1,5 +1,5 @@
 # Diesel City Directory
-THe Diesel City Directory is a database of businesses, venues and cultural events located or occuring in the imaginary location of Diesel City. It would be useful to anyone running a local business, living in or around Diesel City or anyone visiting the area, enabling them to promote their business, connect with services they require, discover places to visit or events to attend and enjoy. The data is stored in relational databases and users can create, read, update and delete information according to their needs.
+THe Diesel City Directory is a database of food & drink businesses, venues and cultural events located or occuring in the imaginary location of Diesel City. It would be useful to anyone running a local business, living in or around Diesel City or anyone visiting the area, enabling them to promote their business, connect with services they require, discover places to visit or events to attend and enjoy. The data is stored in relational databases and users can create, read, update and delete information according to their needs.
 The live site can be found [here](http://)
 
 ![Responsive Mockup](documents/responsive.png)
