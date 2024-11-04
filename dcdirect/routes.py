@@ -1,25 +1,23 @@
-from flask import render_template
+from flask import render_template, Blueprint
 from dcdirect import app, db
 from dcdirect.models import Business, Category, Event
 
+views = Blueprint('views', __name__)
 
-@app.route("/")
+
+@views.route("/")
 def home():
     return render_template("events.html")
 
-@app.route("/places")
+@views.route("/places")
 def places():
     return render_template("places.html")  
 
-@app.route("/fooddrink")
+@views.route("/fooddrink")
 def fooddrink():
     return render_template("fooddrink.html")
 
-@app.route("/login")
-def login():
-    return render_template("login.html")
-
-@app.route("/signup")
+@views.route("/signup")
 def signup():
     return render_template("signup.html")
     
