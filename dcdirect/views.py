@@ -17,7 +17,5 @@ def places():
 def fooddrink():
     return render_template("fooddrink.html")
 
-@views.route("/signup")
-def signup():
-    return render_template("signup.html")
+
     
