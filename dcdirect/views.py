@@ -1,6 +1,6 @@
 from flask import render_template, Blueprint
 from dcdirect import app, db
-from dcdirect.models import Business, Category, Event
+from dcdirect.models import Venue, Food, Event, User
 
 views = Blueprint('views', __name__)
 
