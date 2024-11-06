@@ -28,6 +28,14 @@ def login():
 
     return render_template("login.html")
 
+
+@auth.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for('views.home'))
+
+
 @auth.route("/signup", methods=['GET', 'POST'])
 def signup():
     if request.method == 'POST':
@@ -53,6 +61,7 @@ def signup():
                 password1, method="pbkdf2:sha256"))
             db.session.add(new_user)
             db.session.commit()
+            login_user(user, remember=True)
             flash('Account created succesfully', category='success')
             return redirect(url_for('views.home'))
 
