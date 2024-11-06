@@ -16,27 +16,41 @@
             <a href="{{ url_for('views.home') }}" class="brand-logo">DIESEL CITY</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
+                {% if user.is_authenticated %}
                 <li><a href="{{ url_for('views.home') }}">Whats On</a></li>
+                <li><a href="{{ url_for('views.places') }}">WhereTo Go</a></li>
                 <li><a href="{{ url_for('views.fooddrink') }}">Food & Drink</a></li>
-                <li><a href="{{ url_for('auth.login') }}">Log In</a></li>
-                <li><a href="{{ url_for('auth.signup') }}">Sign Up</a></li>
-                <li><a href="{{ url_for('auth.logout') }}">Log Out</a></li>
                 <li><a href="{{ url_for('views.myplaces') }}">My Events</a></li>
                 <li><a href="{{ url_for('views.myevents') }}">My Places</a></li>
                 <li><a href="{{ url_for('views.myfood') }}">My Food</a></li>
+                <li><a href="{{ url_for('auth.logout') }}">Log Out</a></li>
+                {% else %}
+                <li><a href="{{ url_for('views.home') }}">Whats On</a></li>
+                <li><a href="{{ url_for('views.places') }}">WhereTo Go</a></li>
+                <li><a href="{{ url_for('views.fooddrink') }}">Food & Drink</a></li>
+                <li><a href="{{ url_for('auth.login') }}">Log In</a></li>
+                <li><a href="{{ url_for('auth.signup') }}">Sign Up</a></li>
+                {% endif %}
             </ul>
             </div>
         </nav>
     <!-- Mobile Collapsed Navbar -->
         <ul class="sidenav" id="mobile-demo">
-            <li><a href="{{ url_for('views.home') }}">Whats On</a></li>
-            <li><a href="{{ url_for('views.fooddrink') }}">Food & Drink</a></li>
-            <li><a href="{{ url_for('auth.login') }}">Log In</a></li>
-            <li><a href="{{ url_for('auth.signup') }}">Sign Up</a></li>
-            <li><a href="{{ url_for('auth.logout') }}">Log Out</a></li>
-            <li><a href="{{ url_for('views.myplaces') }}">My Events</a></li>
-            <li><a href="{{ url_for('views.myevents') }}">My Places</a></li>
-            <li><a href="{{ url_for('views.myfood') }}">My Food</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="{{ url_for('views.home') }}">Whats On</a></li>
+                <li><a href="{{ url_for('views.places') }}">WhereTo Go</a></li>
+                <li><a href="{{ url_for('views.fooddrink') }}">Food & Drink</a></li>
+                <li><a href="{{ url_for('views.myplaces') }}">My Events</a></li>
+                <li><a href="{{ url_for('views.myevents') }}">My Places</a></li>
+                <li><a href="{{ url_for('views.myfood') }}">My Food</a></li>
+                <li><a href="{{ url_for('auth.logout') }}">Log Out</a></li>
+                {% else %}
+                <li><a href="{{ url_for('views.home') }}">Whats On</a></li>
+                <li><a href="{{ url_for('views.places') }}">WhereTo Go</a></li>
+                <li><a href="{{ url_for('views.fooddrink') }}">Food & Drink</a></li>
+                <li><a href="{{ url_for('auth.login') }}">Log In</a></li>
+                <li><a href="{{ url_for('auth.signup') }}">Sign Up</a></li>
+                {% endif %}
         </ul>
     </header>
 
