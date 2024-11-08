@@ -1,5 +1,8 @@
 # Diesel City Directory
-THe Diesel City Directory is a database of food & drink businesses, venues and cultural events located or occuring in the imaginary location of Diesel City. It would be useful to anyone running a local business, living in or around Diesel City or anyone visiting the area, enabling them to promote their business, connect with services they require, discover places to visit or events to attend and enjoy. The data is stored in relational databases and users can create, read, update and delete information according to their needs.
+The project is not complete so it will be a fail, the facts of this are as follows.  I had to get a 2 week extension for the previous project following the death of my father inlaw, so i started this section a good 3 weeks later than I would have liked as we had family holiday booked also during this time period.  The CI materials on this module are out of date, they teach us how to use flask in a way that it is no longer used. The LLM states that we shoul;d only learn 1 of the database types and it specifies very clearly that this should be relational databases.  The directions for the project state that we should simply copy the code from the tutorial for user authentication (which is a required element to pass the project). Unfortunately there is no authentication part in the relational database learning, that only occurs in the non relational database section, as this uses mongodb it is incompatible as far as i could tell with what I was doing.  I looked online for authentication tutorials and followed along, but these were using the correct modern way of using flask and I lost a ridiculous amount of time googling error after error as a result of then having a mixed bag of code and trying to debug it.  simply put I ran out of time because CI havent bothered to update the learning materials which is very frustrating givne the cost of the course... 
+This will therefore be a fail, but as I understand it I get some time to resubmit..
+
+The Diesel City Directory is a database of food & drink businesses, venues and cultural events located or occuring in the imaginary location of Diesel City. It would be useful to anyone running a local business, living in or around Diesel City or anyone visiting the area, enabling them to promote their business, connect with services they require, discover places to visit or events to attend and enjoy. The data is stored in relational databases and users can create, read, update and delete information according to their needs.
 The live site can be found [here](http://)
 
 ![Responsive Mockup](documents/responsive.png)
@@ -10,8 +13,7 @@ The live site can be found [here](http://)
 
 ### Typography
 
-I used [Fontpair](https://www.fontpair.co/all) to select two similar yet distinctly different fonts for the main body of text and the quote references, with a third handwritten style font, chosen direct from google fonts, for the large quotes on the landing page, to suggest the personal nature of an individual quote.  I settled on Poppins for the main body, Sintony for the quote references and Dancing Script for the handwritten styling of the quote itself.
-![Font Selection](documents/fontselect.png)
+
 
 ### User Stories
 -   _Users visiting the site may have a number of different missions._
