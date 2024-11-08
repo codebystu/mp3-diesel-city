@@ -13,7 +13,7 @@ class Venue(db.Model):
     venue_description = db.Column(db.Text, unique=False, nullable=True)
     food_id = db.Column(db.Integer, db.ForeignKey("food.id"), nullable=False)
     event_id = db.relationship("Event", backref="venue", cascade="all, delete", lazy=True)
-    users_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     def __repr__(self):
         return self.venue_name
 
@@ -23,7 +23,7 @@ class Food(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     food_type = db.Column(db.String(20), unique=True, nullable=False)
     business_name = db.relationship("Venue", backref="food", lazy=True)
-    users_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
 
     def __repr__(self):
         return self.food_name
@@ -36,7 +36,9 @@ class Event(db.Model):
     venue_id = db.Column(db.Integer, db.ForeignKey("venue.id", ondelete="CASCADE"), nullable=False)
     date_time = db.Column(db.DateTime, nullable=False)
     event_description = db.Column(db.Text, nullable=True)
-    users_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+
+    
 
     def __repr__(self):
         return "#{0} - Event: {1} | Venue: {2} | Date: {3} | Description: {4}".format(
@@ -52,9 +54,14 @@ class User(db.Model, UserMixin):
     password = db.Column(db.String(255))
     first_name = db.Column(db.String(50))
     last_name = db.Column(db.String(50))
-    venues = db.relationship('Venue', backref="users", cascade="all, delete", lazy=True)
-    foods = db.relationship('Food', backref="users", cascade="all, delete", lazy=True)
-    events = db.relationship('Event', backref="users", cascade="all, delete", lazy=True)
+    is_active = db.Column(db.Boolean, default=True)
+    venues = db.relationship('Venue', backref="users", lazy=True)
+    foods = db.relationship('Food', backref="users", lazy=True)
+    events = db.relationship('Event', backref="users", lazy=True)
+
+    @property
+    def is_authenticated(self):
+        return True
 
     def __repr__(self):
         return self.id
